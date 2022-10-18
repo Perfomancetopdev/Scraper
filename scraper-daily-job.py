@@ -23,7 +23,7 @@ while(True) :
     PASSWORD="Futalaufquen2022"
     DBNAME="dbmaster"
     try:
-        conn =  mysql.connector.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
+        conn =  mysql.connector.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME) #, ssl_ca='SSLCERTIFICATE'
         cur = conn.cursor()
         print(cur)
     except mysql.connector.Error as e:
