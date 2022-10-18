@@ -34,14 +34,18 @@ while(True) :
     print(times, " - Searching for pending jobs.")
     logging.info(" - Searching for pending jobs.")
     query_results = []
+    i = 0
     while(len(query_results) == 0):
+        i = i + 1
         try:
             cur.execute("SELECT ScraperJob_ID, Sitemap_ID, Sitemap_Name FROM KIC_TB_Scraper_Jobs WHERE ScraperJob_Status = 'Finished' AND ScraperJob_Action = 1 ORDER BY Datetime ASC LIMIT 1")
             query_results = cur.fetchall()
             ScraperJob_ID = str(query_results[0][0])
             Sitemap_ID = str(query_results[0][1])
             Sitemap_Name = str(query_results[0][2])
-        except:
+        except:# done!
+            print("Search "+ i+"th failed, will search again.")
+            logging.info("Search ", i, "th failed, will search again.")
             query_results = []
             continue
 
