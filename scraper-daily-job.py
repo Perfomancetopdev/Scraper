@@ -26,9 +26,9 @@ while(True) :
         conn =  mysql.connector.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
         cur = conn.cursor()
         print(cur)
-    except:
-        print(times, " - Database connection failed due to ")
-        logging.info(' - Database connection failed due to ')
+    except mysql.connector.Error as e:
+        print(times, " - Database connection failed due to {}".format(e))
+        logging.info(' - Database connection failed due to {}'.format(e))
         exit()
     # search pending jobs
     print(times, " - Searching for pending jobs.")
