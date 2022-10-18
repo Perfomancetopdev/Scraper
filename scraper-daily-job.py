@@ -29,6 +29,7 @@ while(True) :
     except:
         print(times, " - Database connection failed due to ")
         logging.info(' - Database connection failed due to ')
+        exit()
     # search pending jobs
     print(times, " - Searching for pending jobs.")
     logging.info(" - Searching for pending jobs.")
