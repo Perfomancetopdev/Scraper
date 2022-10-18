@@ -27,8 +27,8 @@ while(True) :
         cur = conn.cursor()
         print(cur)
     except:
-        print(times, " - Database connection failed due to {}".format(e))
-        logging.info(' - Database connection failed due to {}'.format(e))
+        print(times, " - Database connection failed due to ")
+        logging.info(' - Database connection failed due to ')
     # search pending jobs
     print(times, " - Searching for pending jobs.")
     logging.info(" - Searching for pending jobs.")
