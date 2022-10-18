@@ -33,12 +33,12 @@ while(True) :
     # search pending jobs
     print(times, " - Searching for pending jobs.")
     logging.info(" - Searching for pending jobs.")
-    cur.execute("SELECT ScraperJob_ID, Sitemap_ID, Sitemap_Name FROM KIC_TB_Scraper_Jobs WHERE ScraperJob_Status = 'Finished' AND ScraperJob_Action = 1 ORDER BY Datetime ASC LIMIT 1")
-    query_results = cur.fetchall()
-    print(query_results)
-    ScraperJob_ID = str(query_results[0][0])
-    Sitemap_ID = str(query_results[0][1])
-    Sitemap_Name = str(query_results[0][2])
+    while(len(query_results) == 0):
+        cur.execute("SELECT ScraperJob_ID, Sitemap_ID, Sitemap_Name FROM KIC_TB_Scraper_Jobs WHERE ScraperJob_Status = 'Finished' AND ScraperJob_Action = 1 ORDER BY Datetime ASC LIMIT 1")
+        query_results = cur.fetchall()
+        ScraperJob_ID = str(query_results[0][0])
+        Sitemap_ID = str(query_results[0][1])
+        Sitemap_Name = str(query_results[0][2])
 
     # get json data
     print(times, ' - processing ScraperJob_ID : ', ScraperJob_ID,'.')
