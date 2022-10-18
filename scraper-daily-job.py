@@ -44,7 +44,7 @@ while(True) :
             Sitemap_ID = str(query_results[0][1])
             Sitemap_Name = str(query_results[0][2])
         except:# done!
-            print("Search "+ str(i)+"th failed, will search again.")
+            print("Search "+ str(i)+"th failed, will search again after 10min.")
             # logging.info("Search ", str(i), "th failed, will search again.")
             query_results = []
             time.sleep(600)
