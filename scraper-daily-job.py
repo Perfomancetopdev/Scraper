@@ -45,7 +45,7 @@ while(True) :
             Sitemap_Name = str(query_results[0][2])
         except:# done!
             print("Search "+ str(i)+"th failed, will search again.")
-            logging.info("Search ", str(i), "th failed, will search again.")
+            # logging.info("Search ", str(i), "th failed, will search again.")
             query_results = []
             continue
 
