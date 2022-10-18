@@ -47,6 +47,7 @@ while(True) :
             print("Search "+ str(i)+"th failed, will search again.")
             # logging.info("Search ", str(i), "th failed, will search again.")
             query_results = []
+            time.sleep(600)
             continue
 
     # get json data
