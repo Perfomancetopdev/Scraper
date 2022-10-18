@@ -33,6 +33,7 @@ while(True) :
     # search pending jobs
     print(times, " - Searching for pending jobs.")
     logging.info(" - Searching for pending jobs.")
+    query_results = []
     while(len(query_results) == 0):
         cur.execute("SELECT ScraperJob_ID, Sitemap_ID, Sitemap_Name FROM KIC_TB_Scraper_Jobs WHERE ScraperJob_Status = 'Finished' AND ScraperJob_Action = 1 ORDER BY Datetime ASC LIMIT 1")
         query_results = cur.fetchall()
