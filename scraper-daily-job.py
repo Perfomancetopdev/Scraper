@@ -10,7 +10,7 @@ times = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
 # use logging
 logfile = 'LOG_' + datetime.today().strftime('%d_%m_%Y') + '.log'
-logging.basicConfig(filename=logfile, encoding='utf-8', format='%(asctime)s %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename=logfile, format='%(asctime)s %(message)s', level=logging.DEBUG)
 
 while(True) :
 
