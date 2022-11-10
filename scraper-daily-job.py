@@ -59,7 +59,7 @@ while(True) :
     json_array = "[" + json_array + "]"
     json_array = json.loads(json_array)
 
-    # insert json data into database
+    # insert json data into database  live:.cid.44fb6727d62e5a89-
     total_i = len(json_array)
     if(total_i != 1):
         try:
